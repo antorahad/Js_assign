@@ -5,29 +5,18 @@ function cubeNumber(number) {
 
     }
     else {
-        let cubeResult = Math.abs(number * number * number);
+        let cubeResult = number * number * number;
         return cubeResult;
     }
 }
-
 function matchFinder(string1, string2) {
-    if (string2.length == 0) {
-        return true;
-    }
-    if (string1.length == 0) {
-        return false;
-    }
     if (typeof string1 !== typeof string2) {
-        let message = 'Please enter a string';
+        let message = 'please enter string input for result';
         return message;
     }
-    if (string1[0] == string2[0]) {
-        let matchOne = matchFinder(string1.substring(1), string2.substring(1));
-        return matchOne;
-    }
     else {
-        let matchTwo = matchFinder(string1.substring(1), string2);
-        return matchTwo;
+        let matchResult = string1.includes(string2);
+        return matchResult;
     }
 }
 
