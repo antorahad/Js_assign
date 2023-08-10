@@ -2,11 +2,10 @@ function cubeNumber(number) {
     if (typeof number !== 'number') {
         let message = 'Please enter a valid number';
         return message;
-
     }
     else {
-        let cubeResult = number * number * number;
-        return cubeResult;
+        let cube = number * number * number;
+        return cube;
     }
 }
 function matchFinder(string1, string2) {
@@ -18,6 +17,36 @@ function matchFinder(string1, string2) {
         let matchResult = string1.includes(string2);
         return matchResult;
     }
+}
+function sortMaker(arr) {
+    let [firstItem, secondItem] = arr;
+    if (typeof firstItem === 'number' && typeof secondItem === 'number') {
+        if (firstItem === secondItem) {
+            return "equal";
+        }
+        else if (firstItem > 0 && secondItem > 0) {
+            return [Math.max(firstItem, secondItem), Math.min(firstItem, secondItem)];
+        }
+        else {
+            return "Invalid Input";
+        }
+    }
+    else {
+        return "Invalid Input";
+    }
+}
+function findAddress(obj) {
+    let sttr = '';
+    for(let key in obj){
+        let value = obj[key];
+        if (value === undefined || value === null || value === '') {
+            sttr += '__,';
+        } else {
+           sttr += value + ',';
+        }
+    }
+    let result = sttr.slice(0, -1);
+    return result;
 }
 
 
