@@ -22,27 +22,30 @@ function sortMaker(arr) {
     let [firstItem, secondItem] = arr;
     if (typeof firstItem === 'number' && typeof secondItem === 'number') {
         if (firstItem === secondItem) {
-            return "equal";
+            let equalMessage = "equal";
+            return equalMessage;
         }
         else if (firstItem > 0 && secondItem > 0) {
             return [Math.max(firstItem, secondItem), Math.min(firstItem, secondItem)];
         }
         else {
-            return "Invalid Input";
+            let invalidMessage = "Invalid Input";
+            return invalidMessage;
         }
     }
     else {
-        return "Invalid Input";
+        let invalidMessage2 = "Invalid Input";
+        return invalidMessage2;
     }
 }
 function findAddress(obj) {
     let sttr = '';
-    for(let key in obj){
+    for (let key in obj) {
         let value = obj[key];
         if (value === undefined || value === null || value === '') {
             sttr += '__,';
         } else {
-           sttr += value + ',';
+            sttr += value + ',';
         }
     }
     let result = sttr.slice(0, -1);
